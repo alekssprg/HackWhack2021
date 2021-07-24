@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
+    public int index = 0;
     void OnTriggerEnter2D(Collider2D other)
     {
         //        Debug.Log("OnTrigger" + other.gameObject.name + " " + other.gameObject.tag);
@@ -12,9 +13,14 @@ public class Star : MonoBehaviour
             var player = other.gameObject.GetComponent<Player>();
             if (player != null)
             {
+
                 player.Count += 10;
                 Destroy(this.gameObject);
             }
+
+            Spawner.singleton.CreateOneStar();
+            Spawner.singleton.AddSpareStat(this.index);
+
         }
     }
 }
