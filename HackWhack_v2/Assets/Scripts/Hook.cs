@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,7 @@ public class Hook : MonoBehaviour
                     if (hookFiring != null)
                     {
                         var position = HookFiringObject.transform.position;
-                        var fireObjectCopy = Instantiate(FireObject, HookFiringObject.transform.position, Quaternion.identity);
+                        var fireObjectCopy = PhotonNetwork.Instantiate("FiringBullet", HookFiringObject.transform.position, Quaternion.identity);
                         var fireBullet = fireObjectCopy.gameObject.GetComponent<FireBullet>();
                         if (fireBullet != null)
                         {

@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,15 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoints = GameObject.FindGameObjectsWithTag("StarPosition").Select(t => t.transform).ToList();
-        for (int i = 0; i < spawnPoints.Count; i++)
+        if (spawnPoints.Count == 0)
         {
-            spareStars.Add(i);
+            spawnPoints = GameObject.FindGameObjectsWithTag("StarPosition").Select(t => t.transform).ToList();
+            for (int i = 0; i < spawnPoints.Count; i++)
+            {
+                spareStars.Add(i);
+            }
+            SpawnStars();
         }
-        SpawnStars();
     }
 
     // Update is called once per frame
@@ -65,7 +69,7 @@ public class Spawner : MonoBehaviour
         // var prefab = starPrefabs[UnityEngine.Random.Range(0, starPrefabs.Count)];
         var element = starPrefab.GetComponent<Star>();
         element.index = spawnTransformIndex;
-        return Instantiate(starPrefab, spawnPoints[spawnTransformIndex]);
+        return PhotonNetwork.Instantiate("Star", spawnPoints[spawnTransformIndex].position, Quaternion.identity);
     }
 }
 

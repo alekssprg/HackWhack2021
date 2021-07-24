@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,7 +52,7 @@ public class FireBullet : MonoBehaviour
             if ((this.transform.position.x > 20) || (this.transform.position.x < -20)
                 || (this.transform.position.y > 20) || (this.transform.position.y < -20))
             {
-                Destroy(this.gameObject);
+                PhotonNetwork.Destroy(this.gameObject);
             }
             //if (this.transform.rotation.)
             // Move translation along the object's x and y axises
@@ -69,7 +70,7 @@ public class FireBullet : MonoBehaviour
             {
                 player.Health = 0;
             }
-            Destroy(this.gameObject);
+            PhotonNetwork.Destroy(this.gameObject);
         }
     }
 }

@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class Star : MonoBehaviour
             if (player != null)
             {
                 player.Count += 10;
-                Destroy(this.gameObject);
+                PhotonNetwork.Destroy(this.gameObject);
             }
             Spawner.singleton.CreateOneStar();
             Spawner.singleton.AddSpareStat(this.index);
