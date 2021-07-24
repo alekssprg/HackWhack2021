@@ -774,6 +774,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7027212578876072129, guid: a140e52fa0d6ff04098f0fd5212335ab, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5120753123075068940, guid: a140e52fa0d6ff04098f0fd5212335ab, type: 3}
       propertyPath: m_Name
       value: Hook
@@ -892,6 +896,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3906938699264308558, guid: efb16f6f3ecd6a947a16b11a6ec5b337, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6612154963887944723, guid: efb16f6f3ecd6a947a16b11a6ec5b337, type: 3}
       propertyPath: m_RootOrder
       value: 1
