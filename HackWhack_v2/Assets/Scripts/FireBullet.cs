@@ -6,6 +6,7 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour
 {
     public string Direction;
+    public GameObject Player;
 
     private float speed = 10.0f;
     float translationY = 0;
@@ -63,7 +64,7 @@ public class FireBullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("OnTrigger" + other.gameObject.name + " " + other.gameObject.tag);
-        if (other.gameObject.tag == "Player")
+        if ((other.gameObject.tag == "Player") && (other.gameObject != Player))
         {
             var player = other.gameObject.GetComponent<Player>();
             if (player != null)

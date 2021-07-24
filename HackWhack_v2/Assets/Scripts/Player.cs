@@ -7,6 +7,8 @@ public class Player : MonoBehaviour, IPunObservable
     public int Count = 0;
     PhotonView view;
     private GameObject _grid;
+    private GameObject fireObject;
+    private int FireCount = 20;
     public GameObject grid 
     {
         get { return _grid; }
@@ -81,7 +83,21 @@ public class Player : MonoBehaviour, IPunObservable
             }
             transform.Translate(translationX, translationY, 0);
 
-            Debug.Log(Count);
+            if (Input.GetKey(KeyCode.LeftControl) && FireCount > 0)
+            {
+                var position = this.transform.position;
+                var fireObjectCopy = PhotonNetwork.Instantiate("FiringBullet", this.transform.position, Quaternion.identity);
+                var fireBullet = fireObjectCopy.gameObject.GetComponent<FireBullet>();
+                if (fireBullet != null)
+                {
+                    fireBullet.Direction = (new string[4] { "A", "B", "C", "D" })[FireCount % 4];
+                    fireBullet.Player = this.gameObject;
+                }
+                FireCount--;
+            }
+            //Debug.Log(Count);
         }
     }
+
+
 }
