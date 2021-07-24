@@ -1,6 +1,7 @@
 ﻿<Properties StartupConfiguration="{F90CFEF0-F76F-B564-EE17-0273118DE499}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.ide.visualstudio@2.0.9/Editor/VisualStudioIntegration.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ConnectToServer.cs">
     <Files>
+      <File FileName="Assets/Scripts/ConnectToServer.cs" Line="21" Column="1" />
       <File FileName="Library/PackageCache/com.unity.ide.visualstudio@2.0.9/Editor/VisualStudioIntegration.cs" Line="149" Column="1" />
     </Files>
     <Pads>
@@ -13,7 +14,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dc107269-206f-45da-8dc8-837b3e305be1" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4b0d54f9-da8b-4394-877f-9e335d053b1f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
