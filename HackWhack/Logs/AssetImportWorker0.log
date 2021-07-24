@@ -192,3 +192,27 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1712.176120 seconds.
+  path: Assets/Scenes/LoadingScene.unity
+  artifactKey: Guid(340bc7d7e229e4382b40f2c8118a9213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LoadingScene.unity using Guid(340bc7d7e229e4382b40f2c8118a9213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4efef74e2890a5926271e250daa14753') in 0.020589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 160.091021 seconds.
+  path: Assets/Scenes/New Scene.unity
+  artifactKey: Guid(26c2db09129cd4c159eceb5d9dcfa9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Scene.unity using Guid(26c2db09129cd4c159eceb5d9dcfa9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6ea66572312ee99cfa24ced2f663f3c') in 0.002182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 48.066740 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '959bcd953351e9c5a7810ccb1b3618ea') in 0.001736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1234.298199 seconds.
+  path: Assets/Scenes/New Scene.unity
+  artifactKey: Guid(26c2db09129cd4c159eceb5d9dcfa9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Scene.unity using Guid(26c2db09129cd4c159eceb5d9dcfa9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0668e57347ec719f639ce23a817300e0') in 0.001597 seconds 
