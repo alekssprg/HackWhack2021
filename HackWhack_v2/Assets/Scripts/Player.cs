@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
             if ((this.transform.position.x > 20) || (this.transform.position.x < -20)
                 || (this.transform.position.y > 20) || (this.transform.position.y < -20))
             {
-                transform.position = new Vector3(-8.0f, 0.5f);
+                transform.position = new Vector3(0.0f, 0.0f);
             }
 
             transform.Translate(translationX, translationY, 0);

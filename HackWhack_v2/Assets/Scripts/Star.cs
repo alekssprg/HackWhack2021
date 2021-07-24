@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
+    PhotonView view;
+
+    void Start()
+    {
+        view = GetComponent<PhotonView>();
+    }
     public int index = 0;
     void OnTriggerEnter2D(Collider2D other)
     {
