@@ -9,6 +9,7 @@ public class Hook : MonoBehaviour
     public GameObject FireObject;
     private Text text;
     private bool empty = false;
+    private int FireCount = 20;
     void Start()
     {
         text = this.gameObject.GetComponentInChildren<Text>();
@@ -28,7 +29,7 @@ public class Hook : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                if (!empty)
+                if ((!empty) && (FireCount > 0))
                 {
                     var hookFiring = HookFiringObject?.GetComponent<HookFiring>();
                     if (hookFiring != null)
@@ -40,8 +41,13 @@ public class Hook : MonoBehaviour
                         {
                             fireBullet.Direction = hookFiring.Direction;
                         }
+                        FireCount--;
                     }
                     empty = true;
+                }
+                else
+                {
+                    empty = false;
                 }
             }
         }

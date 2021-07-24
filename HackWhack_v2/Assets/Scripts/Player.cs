@@ -10,6 +10,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Health == 0)
+        {
+            //respawn игрока
+            transform.position = new Vector3(0.0f, 0.0f);
+            Health = 3;
+        }
         float translationY = Input.GetAxis("Vertical") * speed;
         float translationX = Input.GetAxis("Horizontal") * speed;
 
