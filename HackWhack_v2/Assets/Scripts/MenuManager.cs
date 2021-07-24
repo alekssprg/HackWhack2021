@@ -23,6 +23,6 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("GameMapOneScene");
+        PhotonNetwork.LoadLevel("UrbanMap");
     }
 }
