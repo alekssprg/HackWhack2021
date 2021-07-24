@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3387147473509135122, guid: babd5a6cd285566428ac8068c577037f, type: 3}
+  grid: {fileID: 425414198}
 --- !u!1001 &383144879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11713,7 +11714,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4043739783597210635, guid: 83cb332cf7abe3e4c849dcebe214b5f3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4043739783597210635, guid: 83cb332cf7abe3e4c849dcebe214b5f3, type: 3}
       propertyPath: m_LocalPosition.x

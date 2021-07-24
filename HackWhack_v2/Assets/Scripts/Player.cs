@@ -6,6 +6,16 @@ public class Player : MonoBehaviour, IPunObservable
     public int Health = 3;
     public int Count = 0;
     PhotonView view;
+    private GameObject _grid;
+    public GameObject grid 
+    {
+        get { return _grid; }
+        set
+        {
+            _grid = value;
+            _grid.gameObject.GetComponent<GridScript>().player = this;
+        }
+    }
 
     Rigidbody2D rb;
     private SpriteRenderer m_spriteRenderer;
@@ -56,8 +66,8 @@ public class Player : MonoBehaviour, IPunObservable
             translationX *= Time.deltaTime;
             translationY *= Time.deltaTime;
             //????? ?? ???????
-            if ((this.transform.position.x > 20) || (this.transform.position.x < -20)
-                || (this.transform.position.y > 20) || (this.transform.position.y < -20))
+            if ((this.transform.position.x > 200) || (this.transform.position.x < -200)
+                || (this.transform.position.y > 200) || (this.transform.position.y < -200))
             {
                 transform.position = new Vector3(-8.0f, 0.5f);
             }
