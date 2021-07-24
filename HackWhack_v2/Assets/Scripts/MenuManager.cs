@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public TMP_InputField createRoomText;
     public TMP_InputField joinRoomText;
 
+
     public void CreateRoom()
     {
         RoomOptions roomOptions = new RoomOptions();
