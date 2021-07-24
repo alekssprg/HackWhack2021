@@ -1,17 +1,41 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IPunObservable
 {
     public float speed = 10.0f;
     public int Health = 3;
     public int Count = 0;
     PhotonView view;
 
+    Rigidbody2D rb;
+    private SpriteRenderer m_spriteRenderer;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(m_spriteRenderer.flipX);
+        }
+        else
+        {
+            m_spriteRenderer.flipX = (bool)stream.ReceiveNext();
+        }
+    }
+
+    private void AddObservable()
+    {
+        if (!view.ObservedComponents.Contains(this))
+        {
+            view.ObservedComponents.Add(this);
+        }
+    }
+
     void Start()
     {
-        view = GetComponent<PhotonView>(); 
+        view = GetComponent<PhotonView>();
+        rb = GetComponent<Rigidbody2D>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        AddObservable();
     }
 
     void Update()
@@ -20,7 +44,7 @@ public class Player : MonoBehaviour
         {
             if (Health == 0)
             {
-                //respawn игрока
+                //respawn ??????
                 transform.position = new Vector3(0.0f, 0.0f);
                 Health = 3;
             }
@@ -31,13 +55,20 @@ public class Player : MonoBehaviour
 
             translationX *= Time.deltaTime;
             translationY *= Time.deltaTime;
-            //выход за границы
+            //????? ?? ???????
             if ((this.transform.position.x > 20) || (this.transform.position.x < -20)
                 || (this.transform.position.y > 20) || (this.transform.position.y < -20))
             {
-                transform.position = new Vector3(0.0f, 0.0f);
+                transform.position = new Vector3(-8.0f, 0.5f);
             }
-
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                m_spriteRenderer.flipX = false;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                m_spriteRenderer.flipX = true;
+            }
             transform.Translate(translationX, translationY, 0);
 
             Debug.Log(Count);
