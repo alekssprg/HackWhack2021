@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 
+  Player: {fileID: 0}
 --- !u!114 &-7672623155262671494
 MonoBehaviour:
   m_ObjectHideFlags: 0

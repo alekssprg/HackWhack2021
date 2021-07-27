@@ -1,5 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class Player : MonoBehaviour, IPunObservable
 {
     public float speed = 10.0f;
@@ -9,6 +11,7 @@ public class Player : MonoBehaviour, IPunObservable
     private GameObject _grid;
     private GameObject fireObject;
     private int FireCount = 20;
+    private Text text;
     public GameObject grid 
     {
         get { return _grid; }
@@ -48,6 +51,8 @@ public class Player : MonoBehaviour, IPunObservable
         rb = GetComponent<Rigidbody2D>();
         m_spriteRenderer = GetComponent<SpriteRenderer>();
         AddObservable();
+        text = this.gameObject.GetComponentInChildren<Text>();
+        text.text = Health.ToString();
     }
 
     void Update()
@@ -59,6 +64,7 @@ public class Player : MonoBehaviour, IPunObservable
                 //respawn ??????
                 transform.position = new Vector3(0.0f, 0.0f);
                 Health = 3;
+                text.text = Health.ToString();
             }
             float translationY = Input.GetAxis("Vertical") * speed;
             float translationX = Input.GetAxis("Horizontal") * speed;
@@ -90,7 +96,7 @@ public class Player : MonoBehaviour, IPunObservable
                 var fireBullet = fireObjectCopy.gameObject.GetComponent<FireBullet>();
                 if (fireBullet != null)
                 {
-                    fireBullet.Direction = (new string[4] { "A", "B", "C", "D" })[FireCount % 4];
+                    fireBullet.Direction = (new string[4] { "A", "D", "W", "S" })[FireCount % 4];
                     fireBullet.Player = this.gameObject;
                 }
                 FireCount--;

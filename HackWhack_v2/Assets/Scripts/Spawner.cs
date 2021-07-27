@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     HashSet<int> spareStars = new HashSet<int>();
     public GameObject starPrefab;
     // public List<GameObject> starPrefabs = new List<GameObject>();
-    private int amountStarts = 3;
+    private int amountStarts = 8;
 
     private void Awake()
     {

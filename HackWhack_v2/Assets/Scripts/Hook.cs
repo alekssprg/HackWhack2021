@@ -26,7 +26,7 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name.Contains("Player"))
         {
             if (Input.GetKey(KeyCode.Space))
             {

@@ -11,7 +11,7 @@ public class GridScript : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     // Update is called once per frame
