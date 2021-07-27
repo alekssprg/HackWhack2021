@@ -50,8 +50,8 @@ public class FireBullet : MonoBehaviour
             var translationXActual = translationX * Time.deltaTime;
             var translationYActual = translationY * Time.deltaTime;
             //выход за границы
-            if ((this.transform.position.x > 20) || (this.transform.position.x < -20)
-                || (this.transform.position.y > 20) || (this.transform.position.y < -20))
+            if ((this.transform.position.x > 200) || (this.transform.position.x < -200)
+                || (this.transform.position.y > 200) || (this.transform.position.y < -200))
             {
                 PhotonNetwork.Destroy(this.gameObject);
             }
@@ -69,7 +69,7 @@ public class FireBullet : MonoBehaviour
             var player = other.gameObject.GetComponent<Player>();
             if (player != null)
             {
-                player.Health = 0;
+                player.Health -= 1;
             }
             PhotonNetwork.Destroy(this.gameObject);
         }

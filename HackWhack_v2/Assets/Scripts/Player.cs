@@ -47,12 +47,17 @@ public class Player : MonoBehaviour, IPunObservable
 
     void Start()
     {
+        Count = 0;
+        Health = 3;
         view = GetComponent<PhotonView>();
         rb = GetComponent<Rigidbody2D>();
         m_spriteRenderer = GetComponent<SpriteRenderer>();
         AddObservable();
-        text = this.gameObject.GetComponentInChildren<Text>();
-        text.text = Health.ToString();
+        if (view.IsMine)
+        {
+            text = this.gameObject.GetComponentInChildren<Text>();
+            text.text = Health.ToString() + ";" + Count.ToString();
+        }
     }
 
     void Update()

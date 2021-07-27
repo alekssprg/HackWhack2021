@@ -18,7 +18,7 @@ public class Hook : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player")
+        if (col.gameObject.name.Contains("Player"))
         {
             text.text = "Íאזלטעו ןנמבוכ.";
         }
@@ -55,7 +55,7 @@ public class Hook : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D col)
-    { //גûרוככ ס ענטדדונא
+    {   //גûרוכ ס ענטדדונא
         text.text = "";
     }
 
